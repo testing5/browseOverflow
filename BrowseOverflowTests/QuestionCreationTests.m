@@ -49,4 +49,22 @@
     [mgr fetchQuestionsOnTopic:topic];
     STAssertTrue([communicator wasAskedToFetchQuestions], @"The communicator shoudl need to fetch data.");
 }
+
+- (void)testErrorReturnedToDelegateIsNotErrorNotifiedByCommunicator
+{
+    MockStackOverflowManagerDelegate *delegate = [[MockStackOverflowManagerDelegate alloc]init];
+    mgr.delegate = delegate;
+    NSError *underlyingError = [NSError errorWithDomain:@"Test Domain" code:0 userInfo:nil];
+    [mgr searchingForQuestionsFailedWithError:underlyingError];
+    STAssertFalse(underlyingError == [delegate fetchError],@"Error hsould be ath the corrent level of abstracition");
+}
+
+- (void)testErrorReturnedToDelegateDocumentsUnderlyingError
+{
+    MockStackOverflowManagerDelegate *delegate = [[MockStackOverflowManagerDelegate alloc]init];
+    mgr.delegate = delegate;
+    NSError *underlyingError = [NSError errorWithDomain:@"Test Domain" code:0 userInfo:nil];
+    [mgr  searchingForQuestionsFailedWithError:underlyingError];
+    STAssertEqualObjects([[[delegate fetchError] userInfo] objectForKey:NSUnderlyingErrorKey], underlyingError, @"the underlying eroor shoudl be available to client code");
+}
 @end

@@ -8,11 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *StackOverflowManagerError;
+enum {
+    StackOverflowManagerErrorQuestionSearchCode
+};
+
 @class Topic;
 @class StackOverflowCommunicator;
 @protocol StackOverflowManagerDelegate;
 
 @interface StackOverflowManager : NSObject
+
+
 
 @property id<StackOverflowManagerDelegate> delegate;
 @property (strong) StackOverflowCommunicator *communicator;
@@ -22,6 +29,6 @@
 
 @protocol StackOverflowManagerDelegate <NSObject>
 
-
+- (void)fetchingQuestionsOnTopic:(Topic *)topic failedWithError:(NSError *)error;
 
 @end

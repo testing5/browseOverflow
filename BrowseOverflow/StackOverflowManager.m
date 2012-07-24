@@ -15,6 +15,7 @@
 @synthesize communicator = _communicator;
 
 
+
 - (void)setDelegate:(id<StackOverflowManagerDelegate>)delegate
 {
     if ([delegate conformsToProtocol:@protocol(StackOverflowManagerDelegate)] || delegate == nil) {
