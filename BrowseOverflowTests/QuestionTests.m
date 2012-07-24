@@ -8,6 +8,7 @@
 
 #import "QuestionTests.h"
 #import "Question.h"
+#import "Answer.h"
 
 @implementation QuestionTests
 
@@ -16,8 +17,8 @@
     question = [[Question alloc]init];
     
     question.date = [NSDate distantPast];
-    //question.score = 42;
-    //question.title = @"title Of question";
+
+
 }
 
 - (void)tearDown{
