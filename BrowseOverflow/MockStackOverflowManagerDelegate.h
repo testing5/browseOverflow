@@ -13,4 +13,5 @@
 <StackOverflowManagerDelegate>
 
 @property (strong) NSError *fetchError;
+- (void)fetchingQuestionsFailedWithError:(NSError *)error;
 @end

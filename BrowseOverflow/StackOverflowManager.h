@@ -15,6 +15,7 @@ enum {
 
 @class Topic;
 @class StackOverflowCommunicator;
+@class QuestionBuilder;
 @protocol StackOverflowManagerDelegate;
 
 @interface StackOverflowManager : NSObject
@@ -23,12 +24,15 @@ enum {
 
 @property id<StackOverflowManagerDelegate> delegate;
 @property (strong) StackOverflowCommunicator *communicator;
+@property (strong) QuestionBuilder *questionBuilder;
 
 - (void)fetchQuestionsOnTopic:(Topic *)topic;
+- (void)searchingForQuestionsFailedWithError:(NSError *)error;
+- (void)receivedQuestionsJSON:(NSString *)objectNotioation;
 @end
 
 @protocol StackOverflowManagerDelegate <NSObject>
 
-- (void)fetchingQuestionsOnTopic:(Topic *)topic failedWithError:(NSError *)error;
+- (void)fetchingQuestionsFailedWithError:(NSError *)error;
 
 @end

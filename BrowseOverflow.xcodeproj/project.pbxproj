@@ -41,6 +41,9 @@
 		29A1F32815BE49A200934438 /* StackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A1F32715BE49A200934438 /* StackOverflowCommunicator.m */; };
 		29A1F32915BE49A200934438 /* StackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A1F32715BE49A200934438 /* StackOverflowCommunicator.m */; };
 		29A1F32C15BE4AAA00934438 /* MockStackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A1F32B15BE4AAA00934438 /* MockStackOverflowCommunicator.m */; };
+		29A1F32F15BE906800934438 /* QuestionBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A1F32E15BE906800934438 /* QuestionBuilder.m */; };
+		29A1F33015BE906800934438 /* QuestionBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A1F32E15BE906800934438 /* QuestionBuilder.m */; };
+		29A1F33315BE90BE00934438 /* FakeQuestionBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A1F33215BE90BE00934438 /* FakeQuestionBuilder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +105,10 @@
 		29A1F32715BE49A200934438 /* StackOverflowCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackOverflowCommunicator.m; sourceTree = "<group>"; };
 		29A1F32A15BE4AAA00934438 /* MockStackOverflowCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockStackOverflowCommunicator.h; sourceTree = "<group>"; };
 		29A1F32B15BE4AAA00934438 /* MockStackOverflowCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockStackOverflowCommunicator.m; sourceTree = "<group>"; };
+		29A1F32D15BE906800934438 /* QuestionBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionBuilder.h; sourceTree = "<group>"; };
+		29A1F32E15BE906800934438 /* QuestionBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionBuilder.m; sourceTree = "<group>"; };
+		29A1F33115BE90BD00934438 /* FakeQuestionBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeQuestionBuilder.h; sourceTree = "<group>"; };
+		29A1F33215BE90BE00934438 /* FakeQuestionBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeQuestionBuilder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +185,8 @@
 				29A1F31215BD343800934438 /* Person.m */,
 				29A1F31815BD50C400934438 /* Answer.h */,
 				29A1F31915BD50C400934438 /* Answer.m */,
+				29A1F32D15BE906800934438 /* QuestionBuilder.h */,
+				29A1F32E15BE906800934438 /* QuestionBuilder.m */,
 				29A1F31F15BE450A00934438 /* StackOverflowManager.h */,
 				29A1F32015BE450A00934438 /* StackOverflowManager.m */,
 				29A1F32615BE49A200934438 /* StackOverflowCommunicator.h */,
@@ -217,6 +226,8 @@
 				29A1F32415BE459F00934438 /* MockStackOverflowManagerDelegate.m */,
 				29A1F32A15BE4AAA00934438 /* MockStackOverflowCommunicator.h */,
 				29A1F32B15BE4AAA00934438 /* MockStackOverflowCommunicator.m */,
+				29A1F33115BE90BD00934438 /* FakeQuestionBuilder.h */,
+				29A1F33215BE90BE00934438 /* FakeQuestionBuilder.m */,
 			);
 			path = BrowseOverflowTests;
 			sourceTree = "<group>";
@@ -348,6 +359,7 @@
 				29A1F31A15BD50C400934438 /* Answer.m in Sources */,
 				29A1F32115BE450A00934438 /* StackOverflowManager.m in Sources */,
 				29A1F32815BE49A200934438 /* StackOverflowCommunicator.m in Sources */,
+				29A1F32F15BE906800934438 /* QuestionBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +381,8 @@
 				29A1F32515BE459F00934438 /* MockStackOverflowManagerDelegate.m in Sources */,
 				29A1F32915BE49A200934438 /* StackOverflowCommunicator.m in Sources */,
 				29A1F32C15BE4AAA00934438 /* MockStackOverflowCommunicator.m in Sources */,
+				29A1F33015BE906800934438 /* QuestionBuilder.m in Sources */,
+				29A1F33315BE90BE00934438 /* FakeQuestionBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

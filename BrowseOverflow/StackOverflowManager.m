@@ -9,12 +9,14 @@
 #import "StackOverflowManager.h"
 #import "StackOverflowCommunicator.h"
 #import "Topic.h"
+#import "QuestionBuilder.h"
 
 @implementation StackOverflowManager
 @synthesize delegate = _delegate;
 @synthesize communicator = _communicator;
+@synthesize questionBuilder = _questionBuilder;
 
-
+NSString *StackOverflowManagerError = @"StackOverflowManagerError";
 
 - (void)setDelegate:(id<StackOverflowManagerDelegate>)delegate
 {
@@ -25,8 +27,23 @@
     }
 }
 
+- (void)receivedQuestionsJSON:(NSString *)objectNotioation
+{
+    NSArray *questions = [self.questionBuilder questionsFromJSON:objectNotioation error:NULL];
+}
+
 - (void)fetchQuestionsOnTopic:(Topic *)topic
 {
     [self.communicator searchForQuestionsWithTag:topic.tag];
 }
+
+- (void)searchingForQuestionsFailedWithError:(NSError *)error
+{
+    NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
+    NSError *reportableError = [NSError errorWithDomain:StackOverflowManagerError 
+                                                   code:StackOverflowManagerErrorQuestionSearchCode
+                                               userInfo:errorInfo];
+    [_delegate fetchingQuestionsFailedWithError:reportableError];
+}
+
 @end
