@@ -34,5 +34,6 @@ enum {
 @protocol StackOverflowManagerDelegate <NSObject>
 
 - (void)fetchingQuestionsFailedWithError:(NSError *)error;
+- (void)receivedQuestions:(NSArray *)question;
 
 @end

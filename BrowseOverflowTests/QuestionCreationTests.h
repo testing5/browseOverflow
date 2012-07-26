@@ -9,10 +9,17 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 @class StackOverflowManager;
+@class MockStackOverflowManagerDelegate;
+@class FakeQuestionBuilder;
 @interface QuestionCreationTests : SenTestCase
 {
     @private
     StackOverflowManager *mgr;
+    MockStackOverflowManagerDelegate *delegate;
+    NSError *underlyingError;
+    FakeQuestionBuilder *builder;
+    
+    NSArray *questionArray;
 }
 
 

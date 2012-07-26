@@ -10,10 +10,22 @@
 
 @implementation MockStackOverflowManagerDelegate
 @synthesize fetchError;
+@synthesize questionArray;
 
 - (void)fetchingQuestionsFailedWithError:(NSError *)error
 {
     self.fetchError = error;
+}
+
+
+- (void)receivedQuestions:(NSArray *)question
+{
+    self.questionArray = question;
+}
+
+- (NSArray *)receivedQuestions
+{
+    return self.questionArray;
 }
 
 @end

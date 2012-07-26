@@ -13,5 +13,9 @@
 <StackOverflowManagerDelegate>
 
 @property (strong) NSError *fetchError;
+@property (strong) NSArray *questionArray;
 - (void)fetchingQuestionsFailedWithError:(NSError *)error;
+- (void)receivedQuestions:(NSArray *)question;
+
+- (NSArray *)receivedQuestions;
 @end
